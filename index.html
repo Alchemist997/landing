@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<title>ScreenInfo</title>
+	<meta charset="utf-8">
+
+	<style type="text/css">
+		body {font-family: "Helvetica", "Arial", sans-serif;}
+  		div {font-size: 32px;}
+  		div * {display: inline-block;}
+  		a {font-size: 38px;}
+	</style>
+
+</head>
+<body>
+
+	<div>
+		Размер дисплея:
+	  	<p class="area">x</p><br>
+
+	  	Физический:
+	  	<p class="real-area"></p><br>
+
+	  	Внешний:
+	  	<p class="wh"></p><br>
+	  	
+	  	<a href="#"><b>САЙТ ТЕПЕРЬ ТУТ(нажми)</b></a>
+	</div>
+
+	<!-- =========================== СКРИПТ =========================== -->
+
+	<script type="text/javascript">
+		let clientSize = function() {
+			let width = document.documentElement.clientWidth;
+			let height = document.documentElement.clientHeight;
+			let area = document.querySelector('.area');
+			area.textContent = width + ' x ' + height;
+		};
+
+		let realSize = function() {
+			let realWidth = window.screen.width;
+			let realHeight = window.screen.height;
+			let realArea = document.querySelector('.real-area');
+			realArea.textContent = realWidth + ' x ' + realHeight;
+		};
+
+		let outerSize = function() {
+			let w = window.outerWidth;
+			let h = window.outerHeight;
+			let wh = document.querySelector('.wh');
+			wh.textContent = w + ' x ' + h;
+		};
+
+		window.addEventListener('load', function() {
+			clientSize();
+			realSize();
+			outerSize();
+		});
+
+		window.addEventListener('resize', function() {
+			clientSize();
+			realSize();
+			outerSize();
+		});
+	</script>
+
+</body>
+</html>
