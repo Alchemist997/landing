@@ -5,8 +5,8 @@
 	<meta charset="utf-8">
 
 	<style type="text/css">
-		body {font-family: "Helvetica", "Arial", sans-serif;}
-  		div {font-size: 32px;}
+		body {font-family: "Helvetica", "Arial", sans-serif; min-height: 2000px;}
+  		div {font-size: 32px; position: fixed;}
   		div * {display: inline-block;}
   		a {font-size: 38px;}
 	</style>
@@ -15,16 +15,21 @@
 <body>
 
 	<div>
-		Размер дисплея:
+		Размер окна:
 	  	<p class="area">x</p><br>
 
-	  	Физический:
+	  	Дисплея:
 	  	<p class="real-area"></p><br>
 
 	  	Внешний:
-	  	<p class="wh"></p><br>
+	  	<p class="outer"></p><br>
+
+	  	Внутренний:
+	  	<p class="inner"></p><br>
 	  	
-	  	<a href="https://alchemist997.github.io/portfolio/"><b>САЙТ ТЕПЕРЬ ТУТ(нажми)</b></a>
+	  	<a href="https://alchemist997.github.io/portfolio/"><b>САЙТ ТЕПЕРЬ ТУТ(нажми)</b></a><br>
+
+	  	<p>Страница прокручивается</p>
 	</div>
 
 	<!-- =========================== СКРИПТ =========================== -->
@@ -45,22 +50,31 @@
 		};
 
 		let outerSize = function() {
-			let w = window.outerWidth;
-			let h = window.outerHeight;
-			let wh = document.querySelector('.wh');
-			wh.textContent = w + ' x ' + h;
+			let ow = window.outerWidth;
+			let oh = window.outerHeight;
+			let outer = document.querySelector('.outer');
+			outer.textContent = ow + ' x ' + oh;
+		};
+
+		let innerSize = function() {
+			let iw = window.innerWidth;
+			let ih = window.innerHeight;
+			let inner = document.querySelector('.inner');
+			inner.textContent = iw + ' x ' + ih;
 		};
 
 		window.addEventListener('load', function() {
 			clientSize();
 			realSize();
 			outerSize();
+			innerSize();
 		});
 
 		window.addEventListener('resize', function() {
 			clientSize();
 			realSize();
 			outerSize();
+			innerSize();
 		});
 	</script>
 
