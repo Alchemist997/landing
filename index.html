@@ -1,38 +1,46 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-	<title>ScreenInfo</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ScreenInfo</title>
+	<link type="image/png" sizes="32x32" rel="icon" href="favicon32.png">
 
 	<style type="text/css">
-		body {font-family: "Helvetica", "Arial", sans-serif; min-height: 2000px;}
-  		div {font-size: 26px; position: fixed;}
-  		div * {margin: 0 0 0.35em; padding: 0;}
-  		a {font-size: 30px; text-decoration: none;}
+		body {font-family: Arial, sans-serif; min-height: 3000px; display: flex; justify-content: center;}
+  		main {font-size: 5.5vw; position: fixed; margin: 8%; padding: 10px;}
+  		main * {margin: 0 0 0.35em; padding: 0;}
+  		main > p {text-align: center;}
+  		@media (orientation: landscape) {main {font-size: 4.8vh;}}
+  		@media (max-width: 300px) and (orientation: portrait) {main {font-size: 16px;}}
 	</style>
 
 </head>
 <body>
 
-	<div>
-		Размер окна:
-	  	<p class="area">x</p>
+	<main>
+		<div>
+			Размер окна:
+			<p class="area">x</p>
+		</div>
 
-	  	Дисплея:
-	  	<p class="real-area"></p>
+		<div>
+		  	Дисплея:
+		  	<p class="real-area"></p>
+		</div>
 
-	  	Внешний:
-	  	<p class="outer"></p>
+		<div>
+		  	Внешний:
+		  	<p class="outer"></p>
+		</div>
 
-	  	Внутренний:
-	  	<p class="inner"></p>
-	  	
-	  	<a href="https://alchemist997.github.io/portfolio/"><b>САЙТ ТЕПЕРЬ ТУТ(нажми)</b></a>
+		<div>
+		  	Внутренний:
+		  	<p class="inner"></p>
+		</div>
 
-	  	<p>Страница прокручивается</p>
-
-	  	<a href="viewport/viewport.html">ТУТ без масштабирования</a>
-	</div>
+		<p>Страница<br>прокручивается</p>
+	</main>
 
 	<!-- =========================== СКРИПТ =========================== -->
 
